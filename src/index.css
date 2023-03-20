@@ -11,3 +11,35 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+
+@property --offset {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 2px;
+}
+
+a {
+  font-size: 2rem;
+  font-family: 'Comfortaa', sans-serif;
+  text-decoration: underline;
+  color: #FF70A6;
+  transition: color 0.2s;
+  text-underline-offset: var(--offset, 0.5em);  
+  transition: padding 0.2s, background-color 0.2s, --offset 200ms, text-decoration-color 200ms;
+  border-radius: 25px;
+  transition-delay: --offset 500ms;
+}
+
+a:hover,
+a:focus {
+  color: #7A002F;
+  text-decoration: underline;
+  --offset: 0.4em;
+  background-color: #FF70A6;
+  padding: 25px;
+}
+
+a:visted {
+  color: #7A002F;
+}
